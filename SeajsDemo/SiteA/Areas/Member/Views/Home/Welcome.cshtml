@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+
+<style>
+    li {
+        line-height:30px;
+        color : #666;
+    }
+</style>
+<h2 id="j-welcome">Welcome</h2>
+<a id="j-btn-welcome" href="javascript://">点这里，动态加载样式，并让标题变红</a>
+
+<br/>
+<a id="j-btn-loadTmpl" href="javascript://">点这里，动态加载html模板</a>
+<div id="j-tmpl">
+
+</div>
+
+<div>
+    <a href="/order/list/index" target="_blank">点这里，Order 模块调用 User模块</a>
+</div>
+
+<h3>该 demo 示范了如下几点</h3>
+<ul>
+    <li><a href="http://seajs.org/docs/#docs" target="_blank">seajs 项目地址</a></li>
+    <li><a href="https://github.com/seajs/seajs/issues/547" target="_blank">为何使用seajs</a></li>
+
+    <li>seajs 的搭建，需要注意的是 seajs 目录的存放位置 <a target="_blank" href="https://github.com/seajs/seajs/issues/262">config 文档</a></li>
+    <li>开发时 js路径配置到本地项目 scripts/src， 上线后打包统一放到静态资源站</li>
+
+    <li>
+        模块的建立，和引用 define() 
+        <a target="_blank" href="https://github.com/seajs/seajs/issues/242"> defind 文档</a> 
+        <a href="https://github.com/seajs/seajs/issues/260" target="_blank">use 文档</a>
+
+    </li>
+
+    <li>动态加载资源 require("") 或者 require.async("",callback)</li>
+
+    <li>使用VS的代码片段功能，加速开发，打开代码片段管理器 （Ctrl K + B） 然后把My Code Snippets 目录下的代码片段归类添加
+        <div>
+            在JS文件里面，输入（defune + tab） 快速定义模块
+        </div>
+        <div>
+            在Views里面，输入（seajs + tab） 快速加入 seajs.use()
+        </div>
+    </li>
+</ul>
+
+<h3>注意：</h3>
+<ul>
+    <li>站点的静态资源配置，放到了 ~/Views/Shared/_Static.cshtml 里面</li>
+    <li>静态资源站的端口，可能在各位的开发机上是不一样的，请相应修改下_Static.cshtml里面的script引用地址</li>
+</ul>
+<script>
+    seajs.use(['member/home/page/welcome'], function (page) {
+        new page();
+    })
+</script>

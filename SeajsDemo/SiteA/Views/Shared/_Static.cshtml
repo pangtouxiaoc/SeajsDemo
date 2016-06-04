@@ -1,0 +1,28 @@
+﻿@*下面的js 可以使用第三方工具合并*@
+<script src="http://localhost:1969/seajs/2.2.3/sea.js"></script>
+
+@*如果需要加载文本文件，例如html,json,tpl，那么需要加载这个插件*@
+<script src="http://localhost:1969/seajs/2.2.3/seajs-text.js"></script>
+
+@*r如果http 服务器支持合并请求，可以使用这个插件合并，而且还可以附加CDN缓存的版本号*@
+@*<script src="http://localhost:1969/seajs/2.2.3/seajs-combo.js"></script>*@
+
+@*这个是我们项目的seajs 配置*@
+<script src="http://localhost:1969/js/config/web-config.js"></script>
+
+@if(HttpContext.Current.IsDebuggingEnabled ){
+    <script>
+        //本地开发配置
+        seajs.config({
+            paths: {
+                'member': '/scripts/src/member',
+                'merchant': '/scripts/src/merchant',
+                'order': '/scripts/src/order',
+                'product': '/scripts/src/product'
+            }
+        })
+    </script>
+}
+
+
+

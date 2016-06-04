@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2 id="j-userInfo"></h2>
+
+
+<script>
+    seajs.use(['member/util/userapi'], function (userapi) {
+        $(function () {
+            var userInfo = userapi.getUserById(123456);
+
+            $("#j-userInfo").html("UserID=" + userInfo.UserID + " UserName=" + userInfo.UserName);
+
+        });
+        
+    })
+</script>
+

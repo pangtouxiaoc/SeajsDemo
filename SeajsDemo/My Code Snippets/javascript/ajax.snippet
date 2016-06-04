@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>ajax</Title>
+    <Author>luojh</Author>
+    <Description>ajax 语句的代码段</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>ajax</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>Module</ID>
+        <ToolTip>Module Name</ToolTip>
+        <Default>App</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="javascript">
+      <![CDATA[
+$$.ajax({
+    url: "",
+    type: "POST",
+    dataType:"json",
+    data: {
+      
+    },
+    success: function (d) {
+        d = d.obj ? d.obj : d;
+        if (d.Result) {
+
+            loading.alert("操作成功！", function () {
+                $selected$$end$
+            });
+
+        } else {
+            loading.alert("操作失败：" + d.Message);
+        }
+    },
+    error: function(){ loading.hide(); }
+});
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

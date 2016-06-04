@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>click</Title>
+    <Author>阿邦</Author>
+    <Description>click 语句的代码段</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>click</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>clickable</ID>
+        <ToolTip>clickable dom</ToolTip>
+        <Default>action</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="javascript"><![CDATA[$selected$$end$
+	 $$('#j-$clickable$').click(function(e){
+	      e.preventDefault();
+		  
+	 
+	 });
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

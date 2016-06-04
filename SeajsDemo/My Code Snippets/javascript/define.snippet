@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>define</Title>
+    <Author>luojh</Author>
+    <Description>define 语句的代码段</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>define</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>Module</ID>
+        <ToolTip>Module Name</ToolTip>
+        <Default>Page</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="javascript"><![CDATA[$selected$$end$
+	/// <reference path="/scripts/_rels.js" />
+/*!*
+*
+*  Name     :       $Module$
+*  Author   :       luojh	
+*  Email    :       luojianhe@139.com
+*  Date     :       
+*  Desc     :       描述
+*
+***************************************/
+	define(function (require, exports, module) {
+    //var $$ = require('$$');
+    
+	function $Module$(options) {
+        /// <summary>
+        /// $Module$ 构造函数
+        /// </summary>
+		
+        if (!(this instanceof $Module$)) {
+            return new $Module$(options);
+        }
+		
+		//默认配置
+        var config = {};
+
+        if (options) {
+		    //合并配置
+            config = $$.extend(true,config, options);
+        }
+		
+        this.config = config;
+		this.init();
+    }
+
+    $Module$.prototype.init = function () {
+        /// <summary>
+        /// $Module$ 初始化方法   
+        /// </summary> 
+		
+    }
+	
+    module.exports = new $Module$();
+    });
+	]]></Code>
+  </Snippet>
+</CodeSnippet>
